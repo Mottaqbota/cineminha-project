@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Compra de Tickets de Cinema</title>
+  <script type="text/javascript">
+    // Array para armazenar os filmes e a quantidade de tickets disponíveis e comprados
+    var filmes = [
+      { nome: "Filme 1", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 2", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 3", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 4", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 5", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 6", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 7", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 8", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 9", disponiveis: 10, comprados: 0 },
+      { nome: "Filme 10", disponiveis: 10, comprados: 0 }
+    ];
+
+    // Função para exibir a lista de filmes na página
+    function exibirFilmes() {
+      var filmesDiv = document.getElementById("filmes");
+      filmesDiv.innerHTML = ""; // Limpa o conteúdo atual
+
+      for (var i = 0; i < filmes.length; i++) {
+        var filme = filmes[i];
+        var filmeDiv = document.createElement("div");
+        filmeDiv.className = "filme";
+        filmeDiv.innerHTML = 
+        "Filme: " + filme.nome +
+        "<br>Disponíveis: " + filme.disponiveis +
+        "<br>Comprados: " + filme.comprados +
+        "<br><button onclick='comprarTicket(" + i + ")'>Comprar</button>";
+        filmesDiv.appendChild(filmeDiv);
+      }
+    }
+
+    
+
+    // Função para comprar um ticket
+    function comprarTicket(index) {
+      var filme = filmes[index];
+      if (filme.disponiveis > 0) {
+        filme.disponiveis--;
+        filme.comprados++;
+        exibirFilmes();
+        alert("Ticket comprado com sucesso para o filme: " + filme.nome);
+      } else {
+        alert("Não há mais tickets disponíveis para o filme: " + filme.nome);
+      }
+    }
+  </script>
+  <style>
+    .filme {
+      border: 1px solid #000;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Filmes</h1>
+  <div id="filmes"></div>
+  <script>exibirFilmes();</script>
+</body>
+</html>
