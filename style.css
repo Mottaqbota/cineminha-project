@@ -1,0 +1,215 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    
+    text-decoration: none;
+    list-style: none;
+}
+
+
+:root {
+    --Text-Colors: #fff;
+    --BgColor-Header: #1d1d1d;
+    --BgColor-Section: #2a2a2a;
+    --Hover-Color: #e3b900;
+    --BorderBottom-Color: #826a00;
+    --Titles-Color: #ba9800;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--BgColor-Section);
+}
+
+/* Header */
+
+header {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 10vh;
+    background-color: var(--BgColor-Header);
+    box-shadow: 0px 0px 10px 2px var(--BgColor-Header);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 10vh;
+}
+
+.logoCinema {
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+}
+
+.navItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 10vh;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 300;
+
+    color: var(--Hover-Color);
+    transition: all 0.2s ease-in;
+}
+
+.navItems:hover {
+    margin-top: 15px;
+    height: 12vh;
+    border-radius: 0 0 10px 10px;
+    font-weight: 500;
+    
+    border-bottom: 5px solid var(--BorderBottom-Color);
+    color: var(--BgColor-Header);
+    background-color: var(--Hover-Color);
+}
+
+/* Sections */
+
+section {
+    width: 100vw;
+    height: auto;
+}
+
+
+.sectionFilmes {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    margin-top: 10vh;
+    background-color: var(--BgColor-Section);
+}
+
+.containerFilmes {
+    width: 100vw;
+    height: auto;
+}
+
+.containerCardsFilmes {
+    transition: all 1s ease-in-out;
+    gap: 32px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 50px;
+}
+
+.titulos {
+    font-size: 36px;
+    color: var(--Titles-Color);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.cardFilme {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    
+    width: 240px;
+    height: 450px;
+    background-color:var(--BgColor-Header);
+    padding: 22px 6px;
+    border-radius: 10px;
+    
+    box-shadow: 0px 0px 10px 2px var(--BgColor-Header);
+    color: var(--Text-Colors);
+    transition: 0.2s ease-in-out;
+}
+
+#qtd-tickets {
+    animation: floatingInfoTickets 5s infinite 0s ease-in-out;
+    opacity: 0.95;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 120%;
+    top: 50px;
+    border-radius: 10px;
+    background-color:var(--BgColor-Header);
+    box-shadow: 0px 0px 5px 0px var(--BgColor-Header);
+    padding: 10px;
+}
+
+@keyframes floatingInfoTickets {
+    0% {
+        top: 50px;
+    }
+    50% {
+        top: 70px;
+    }
+    100% {
+        top: 50px;
+    }
+}
+
+.tituloFilme {
+    margin-bottom: 0;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.imgFilme {
+    width: 220px;
+    height: 300px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--Hover-Color);
+}
+
+.descFilmeDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.descFilme {
+    display: none;
+}
+
+.btninfoFilme {
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 80%;
+    height: 50px;
+    border: 0;
+    font-size: 16px;
+    border-radius: 4px;
+    color: var(--BgColor-Header);
+    background-color: var(--Hover-Color);     
+}
+.btninfoFilme:hover {
+    box-shadow: 0px 0px 10px 0px var(--Hover-Color);
+    transform: scale(0.9);
+    /* border-bottom: 5px solid var(--BorderBottom-Color); */
+}
+
+.cardFilme:hover {
+    transform: scale(1.02);
+    border-bottom: 2px solid var(--Hover-Color);
+}
+/* .cardFilme:hover > .descFilme {
+    display: flex;
+} */
