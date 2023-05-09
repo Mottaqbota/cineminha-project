@@ -71,11 +71,7 @@ function comprar(){
     if(QtdTickets < 40){
         TicketsComprados++;
         localStorage.setItem('tickets-sold', TicketsComprados);
-        for(var filmName in filmConfig){
-            let filme = filmConfig[filmName]
-            alert(`1 Ticket Adquirido! Para o filme: ${filme.nameFilm}`)
-            return
-        }
+        alert(`1 Ticket Adquirido! Para o filme: ${film.nameFilm}`)
     };
     document.getElementById("qtd-tickets").style.display = ('flex');
     document.getElementById("qtd-tickets").innerHTML = `<p>Apenas: <strong>${QtdTickets} Tickets</strong> Disponíveis!</p><p><strong>${TicketsComprados} Tickets</strong> foram Vendidos!</p>`;
